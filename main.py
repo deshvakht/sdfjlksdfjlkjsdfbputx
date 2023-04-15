@@ -33,9 +33,9 @@ bot = Client(
     api_id=int(os.environ.get("API_ID")),
     api_hash=os.environ.get("API_HASH")
 )
-auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
+auth_users = "6253923773"
 sudo_users = auth_users
-sudo_groups = [ int(chat) for chat in os.environ.get("GROUPS").split(",")  if chat != '']
+sudo_groups = "-871596545"
 
 @bot.on_message(filters.command(["start"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
