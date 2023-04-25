@@ -67,6 +67,8 @@
 
       "required": false
 
+        }
+
     },
 
     "buildpacks": [
