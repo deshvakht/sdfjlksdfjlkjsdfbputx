@@ -97,7 +97,6 @@ async def account_login(bot: Client, m: Message):
     await editable.edit("**Last line or 4th line**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
-    await input3.delete(True)
     if raw_text3 == 'de':
         CR = credit
     else:
@@ -324,7 +323,6 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         await m.reply_document(ka,caption=cc1)
-                        await copy.copy(chat_id = -1001936874635)
                         count+=1
                         await reply.delete (True)
                         time.sleep(1)
@@ -343,7 +341,6 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         await m.reply_document(ka, caption=f'**File No. »** {str(count).zfill(3)}\n**File Name »** {name1} {res}.pdf\n**Batch »** {raw_text0}\n\n**{CR}**')
-                        await copy.copy(chat_id = -1001936874635)
                         count+=1
                         # time.sleep(1)
                         await reply.delete (True)
