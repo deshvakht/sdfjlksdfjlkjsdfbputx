@@ -94,7 +94,7 @@ async def account_login(bot: Client, m: Message):
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
 
-    await editable.edit("**Last line or 4th line**")
+    await m.reply_text("**Last line or 4th line**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     if raw_text3 == 'de':
