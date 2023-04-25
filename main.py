@@ -32,10 +32,6 @@ bot = Client(
     bot_token= "5924735820:AAGDPiM3DuYmkXEGUNpsoWQxPd3qrcep4Qg",
     api_id= 29410389,
     api_hash= "0c716764715886f6641477ffbb63e1ee")
-)
-auth_users = " "
-sudo_users = auth_users
-sudo_groups = " "
 
 @bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
