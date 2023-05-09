@@ -13,7 +13,6 @@ import tgcrypto
 from p_bar import progress_bar
 # from details import api_id, api_hash, bot_token
 from subprocess import getstatusoutput
-from config import *
 import helper
 from logger import logging
 import logging
@@ -40,7 +39,7 @@ bot = Client(
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Hello im txt file downloader\nPress /pyro to download links listed in a txt file in the format **Name:link**\n\nBot made by PRATIK")
 
-@bot.on_message(filters.command(["cancel"]) & filters.user(ADMINS))
+@bot.on_message(filters.command(["cancel"])& ~filters.edited)
 async def cancel(_, m):
     editable = await m.reply_text("Canceling All process Plz wait")
     global cancel
@@ -52,7 +51,7 @@ async def restart_handler(_, m):
     await m.reply_text("Restarted!", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command(["pyro"]) & filters.user(ADMINS))
+@bot.on_message(filters.command(["pyro"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
