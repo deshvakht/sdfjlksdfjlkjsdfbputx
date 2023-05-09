@@ -36,7 +36,7 @@ bot = Client(
     api_hash= "0c716764715886f6641477ffbb63e1ee")
 
 
-@bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
+@bot.on_message(filters.command(["start"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Hello im txt file downloader\nPress /pyro to download links listed in a txt file in the format **Name:link**\n\nBot made by PRATIK")
 
@@ -47,7 +47,7 @@ async def cancel(_, m):
     cancel = True
     await editable.edit("cancled")
     return
-@bot.on_message(filters.command("restart") & filters.user(ADMINS))
+@bot.on_message(filters.command("restart")& ~filters.edited)
 async def restart_handler(_, m):
     await m.reply_text("Restarted!", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -372,7 +372,7 @@ async def account_login(bot: Client, m: Message):
     
     
     
-@bot.on_message(filters.command(["jw"]) & filters.user(ADMINS))
+@bot.on_message(filters.command(["jw"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
