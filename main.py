@@ -56,7 +56,7 @@ async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
-    await bot.send_document(-1001840293770, x)
+    await bot.send_document(-1001802720971, x)
     await input.delete(True)
 
     path = f"./downloads/{m.chat.id}"
@@ -123,7 +123,7 @@ async def account_login(bot: Client, m: Message):
         for i in range(arg, len(links)):
             
             url = links[i][1]
-            name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@","").replace("*","").replace(".","").strip()
+            name1 = links[i][0].replace("\t", "").replace(" : ", " - ").replace("/", "").replace("+", "").replace("#", "").replace("||", "|").replace("@","").replace("*","").replace(".","").strip()
 
 
 
@@ -323,7 +323,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1001840293770)
+                        await copy.copy(chat_id = -1001802720971)
                         count+=1
                         await reply.delete (True)
                         time.sleep(1)
@@ -342,7 +342,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1001840293770)
+                        await copy.copy(chat_id = -1001802720971)
                         count+=1
                         # time.sleep(1)
                         await reply.delete (True)
