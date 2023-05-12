@@ -30,9 +30,9 @@ import os
 
 bot = Client(
     "bot",
-    bot_token= "6004146702:AAFsiy2QTlxpEsBzPlHln6S2qJ8mHRfa5sI",
-    api_id= 29410389,
-    api_hash= "0c716764715886f6641477ffbb63e1ee")
+    bot_token= "5936066423:AAFPDK0ZJUcCdT794im-HRcGDyCny4jPQWo",
+    api_id= 23442389,
+    api_hash= "70490ec8a810932cb5cb7f9d6a839ee0")
 
 
 @bot.on_message(filters.command(["start"])& ~filters.edited)
@@ -56,7 +56,7 @@ async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
-    await bot.send_document(-1001802720971, x)
+    await bot.send_document(-808921320, x)
     await input.delete(True)
 
     path = f"./downloads/{m.chat.id}"
@@ -323,7 +323,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1001802720971)
+                        await copy.copy(chat_id = -808921320)
                         count+=1
                         await reply.delete (True)
                         time.sleep(1)
@@ -342,7 +342,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1001802720971)
+                        await copy.copy(chat_id = -808921320)
                         count+=1
                         # time.sleep(1)
                         await reply.delete (True)
@@ -524,6 +524,6 @@ async def account_login(bot: Client, m: Message):
                 continue 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("Done")     
+    await m.reply_text("🤖Done🤖")     
     
 bot.run()
