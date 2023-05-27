@@ -30,9 +30,9 @@ import os
 
 bot = Client(
     "bot",
-    bot_token= "5936066423:AAFPDK0ZJUcCdT794im-HRcGDyCny4jPQWo",
-    api_id= 23442389,
-    api_hash= "70490ec8a810932cb5cb7f9d6a839ee0")
+    bot_token= "5936066423:AAFPDK0ZJUcCdT794im-HRcy4jPQWo",
+    api_id= 29,
+    api_hash= "70490ec8a810932c0")
 
 
 @bot.on_message(filters.command(["start"])& ~filters.edited)
